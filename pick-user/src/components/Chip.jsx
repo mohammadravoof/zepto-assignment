@@ -1,5 +1,4 @@
 import x from "../assets/x.png"
-import sample from "../assets/useravatar2.png"
 import { useUserContext } from "./UserContext";
 import SearchList from "./SearchList";
 
