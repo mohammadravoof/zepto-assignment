@@ -6,9 +6,9 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [isInputFocused, setIsInputFocused] = useState(false);
-  const [datas, setdatas] = useState(profiledata);
-
-  const [completed, setCompleted] = useState([]);
+    const [datas, setdatas] = useState(profiledata);
+    const [completed, setCompleted] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
 
   const handleInputFocus = () => {
@@ -16,7 +16,7 @@ export const UserProvider = ({ children }) => {
   };
 
   
-  const handleTodoClick = (data) => {
+  const handleTaskClick = (data) => {
     const isIndatas = datas.some((t) => t.id === data.id);
 
     if (isIndatas) {
@@ -28,6 +28,8 @@ export const UserProvider = ({ children }) => {
       setdatas([...datas, data]);
       setCompleted(updatedCompleted);
     }
+
+    setSearchTerm('');
   };
 
   const contextValue = {
@@ -35,7 +37,9 @@ export const UserProvider = ({ children }) => {
     handleInputFocus,
     datas,
     completed,
-    handleTodoClick,
+    handleTaskClick,
+    searchTerm,
+    setSearchTerm,
   };
 
   return (
