@@ -16,7 +16,7 @@ const UserProfile = () => {
         <ul>
         {filteredItems.map((data,index) =>
          <li key={index} onClick={() => handleTaskClick(data)}>
-            <div className="flex h-14 py-1 px-4 gap-4 items-center bg-slate-100">
+            <div className="flex h-14 py-1 px-4 gap-4 items-center bg-slate-100 hover:bg-slate-200">
                 <img className="aspect-square h-full rounded-full" src={data.pic} />
                 <span className=" w-36">{data.name}</span>
                 <span className=" w-64 text-slate-500">{data.email}</span>
