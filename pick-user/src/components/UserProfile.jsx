@@ -1,5 +1,3 @@
-import sample from "../assets/useravatar2.png";
-// import { profiledata } from "../components/data";
 import { useUserContext } from "./UserContext";
 
 
